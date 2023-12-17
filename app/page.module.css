@@ -1,0 +1,8 @@
+.background {
+    background-color: var(--c-primary);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: radial-gradient(70% 50% at top right, var(--c-secondary), transparent),
+    radial-gradient(70% 50% at bottom left, var(--c-secondary), transparent);
+}
