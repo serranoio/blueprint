@@ -8,6 +8,7 @@ import Student from "@/assets/svg/Student"
 import ArrowUp from "@/assets/svg/ArrowUp"
 import BatteryCharging from "@/assets/svg/BatteryCharging"
 import { useRouter } from "next/router"
+import { useEffect, useState } from "react"
 
 interface ButtonTab {
     name: string,
@@ -46,25 +47,29 @@ const text = button.innerText === "Home" ? "" : button.innerText;
 window.location.href = "/" + text.toLowerCase(); 
 }
 
-const getSelected = (tab: ButtonTab): boolean => {
-    if (typeof window === "undefined") {
-        return false;
-    }
+const [selected, setSelected] = useState(new Array(tabs.length).fill(false));
 
-    if (tabs.filter((aTab) => window.location.href.includes(aTab.name.toLocaleLowerCase())).length === 0 &&
-    tab.name === "Home") {
-        return true
-    }
 
-    return window.location.href.includes(tab.name.toLocaleLowerCase()) 
-}
+useEffect(() => {
+
+    setSelected(() => {
+        return tabs.map((tab: ButtonTab) => {
+            if (tabs.filter((aTab) => window.location.href.includes(aTab.name.toLocaleLowerCase())).length === 0 &&
+            tab.name === "Home") {
+                return true
+            }
+            
+            return window.location.href.includes(tab.name.toLocaleLowerCase()) 
+        })
+    })
+}, []);
 
     return <nav onClick={navigate}>
         {tabs.map((
             tab: ButtonTab,
             i: number
         ) => {
-return <Button key={i} selected={getSelected(tab)}>
+return <Button key={i} selected={selected[i]}>
                 {tab.icon} 
                 {tab.name}
             </Button> 
