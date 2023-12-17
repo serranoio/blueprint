@@ -1,4 +1,5 @@
 .center {
+    position: relative;
     display: flex;
     flex-direction: column; 
     flex-grow: 1;
@@ -6,14 +7,33 @@
     justify-content: center;
     align-items: center;
     font-size: var(--text-xs);
-    
+   
+    border: none;
     box-shadow: 0 0 2px var(--c-subtitle);
     background-color: transparent;
     color: var(--c-text-color);
     font-family: "Exo 2";
-    gap: var(--space-s)
+    gap: var(--space-s);
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.center:hover {
+    transform: translateY(-2px);
 }
 
 .center path {
-    fill: var(--c-text-color);
+    fill: var(--c-subtitle);
+}
+
+
+.selected::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--c-text-color);
+    top: 5%;
+    right: 5%;
 }

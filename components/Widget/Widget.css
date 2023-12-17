@@ -1,0 +1,10 @@
+.widget {
+    border-radius: var(--br);
+    box-shadow: 0 0 2px var(--c-subtitle);
+    padding: var(--space-m);
+    color: var(--c-text-color);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

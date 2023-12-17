@@ -6,3 +6,18 @@
     background-image: radial-gradient(70% 50% at top right, var(--c-secondary), transparent),
     radial-gradient(70% 50% at bottom left, var(--c-secondary), transparent);
 }
+
+.main {
+    height: 100%;
+}
+
+
+.widget-box {
+    padding: 0 var(--space-s);
+    margin-top: var(--space-l);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--space-m);
+    height: 75%;
+
+}

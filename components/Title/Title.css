@@ -1,0 +1,10 @@
+.title {
+    font-size: var(--text-xl);
+    color: var(--c-text-color);
+    font-style: italic;
+    
+}
+.title-box {
+   background-color: transparent; 
+    padding: var(--space-m) var(--space-l);
+}

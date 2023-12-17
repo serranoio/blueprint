@@ -46,6 +46,8 @@
   --c-secondary: #503666;
   --c-text-color: #fff;
 
+  --br: 10px;
+
 
 
 
@@ -113,8 +115,8 @@ a {
 html,
 body {
   height: 100%;
-  max-width: var(--dev-mobile-width);
-  margin: 0 auto;
+  /* max-width: var(--dev-mobile-width); */
+  /* margin: 0 auto; */
 }
 
 html {
