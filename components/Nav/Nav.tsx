@@ -47,6 +47,10 @@ window.location.href = "/" + text.toLowerCase();
 }
 
 const getSelected = (tab: ButtonTab): boolean => {
+    if (typeof window === "undefined") {
+        return false;
+    }
+
     if (tabs.filter((aTab) => window.location.href.includes(aTab.name.toLocaleLowerCase())).length === 0 &&
     tab.name === "Home") {
         return true
